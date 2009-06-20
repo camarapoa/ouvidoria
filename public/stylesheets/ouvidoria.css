@@ -1,0 +1,67 @@
+/* ================================== */
+/* =            Global              = */
+/* ================================== */
+
+body { padding:0; margin:0; font-size:12px; font-family: arial, clean, sans-serif; background: #ffffff; }
+h1{color:white}
+#content { padding:15px; }
+a, a:visited { color: #3333bb; }
+input[type=text] { font-size:14px; }
+textarea { font-size:14px; }
+.pendente{background-color:#F7D088;}
+
+
+
+#rodape{height:50px;margin-top:100px}
+
+.new{background: url(/images/add.png);background-repeat:no-repeat;padding-left:20px}
+.edit{background: url(/images/edit.png);background-repeat:no-repeat;padding-left:20px}
+.destroy{background: url(/images/destroy.png);background-repeat:no-repeat;padding-left:20px}
+
+/* ================================== */
+/* =            Banner              = */
+/* ================================== */
+
+#banner { padding-left:20px; background-color:#183048; height:100px; }
+#banner h1 { font-size:20px; padding-bottom:12px; }
+#banner h1 a { text-decoration: none; color:#b5d0f6; }
+#banner #menu { font-size:12px; text-transform:uppercase; }
+#banner #menu a { text-decoration:none; padding:11px 15px; color:#ffffff; font-weight:bold; }
+#banner #menu a.selected { color:#183048; background-color:#ffffff;  }
+#banner .account { float:right; background-color:#244058; padding:6px; width:250px; margin:15px; color:#ffffff }
+#banner .account img { float:left; border:2px solid #485588;}
+#banner .account .name { margin-top:40px; width:245px; text-align:right; }
+#banner .account a { color:#686fb8 }
+#banner .account a:hover { color:#ffffff }
+
+
+/* =================================== */
+/*          Messages & Errors        = */
+/* =================================== */
+
+.success {	border: 1px solid #9c9; background: #e2f9e3 url(/images/tick_solid.png) no-repeat top; color: #060 }
+.error { border: 1px solid #c68484; background: #fcc url(/images/cross_solid.png) no-repeat top; color: #c00; }
+.warning { border: 1px solid #efefaf; background: #ffffcf url(/images/error_solid.png) no-repeat top;	color: #8a8a30; }
+.info {	border: 1px solid #82c2d4; background: #ebf5f8 url(/images/information_solid.png) no-repeat top; color: #229 }
+/* .notice, .error, .warning, .info { font-weight: bold;	margin: -10px 0 15px 0;	padding: 5px 5px 5px 27px; background-position: 5px 5px } */
+.success, .error, .warning, .info { font-size:13px; text-align:center; margin: -10px 0 15px 0; padding: 8px 5px 8px 27px; background-position: 25px 9px }
+.warning, .notice, .error{padding:5px;border: 1px solid #CCC}
+.warning{}
+.notice{}
+.error{}
+.selected{background-color:blue;}
+
+#tooltip{position:absolute;border:1px solid #333;background-color: #5379B8;padding:2px 2px;color: #FFF;display:none;} 
+#tooltip h3{font-size:12px;margin:0}
+
+/* =================================== */
+/*			          Busca			         = */
+/* =================================== */
+#box_search{padding:10px;background-color:#DDF;width:30%;margin-top:20px}
+#busca{padding:10px;font: 16px Arial;font-weight:bold}
+#resultado_busca{font-size:12px;border-collapse: collapse;padding: 10px;}
+	#resultado_busca td{padding:8px}
+.line_even{background-color:#DDF;}
+.line_odd{background-color:white;}
+.label{width:80px;float:left; }
+

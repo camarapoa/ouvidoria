@@ -1,0 +1,4 @@
+log/*.log
+db/database.yml
+*.sqlite3
+todo

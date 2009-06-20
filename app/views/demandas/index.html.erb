@@ -1,0 +1,44 @@
+<%= flash[:message] %>
+
+<%= link_to "Nova Demanda", new_demanda_path, :class => :new %>
+
+<div id='box_search'>
+	<h4>Procurar Demandas</h4>
+	<%= form_tag '/demandas' , :method => :get %>	
+	  <p><span class='label'>Número</span><%= text_field_tag :numero %>	</p>
+		<p><span class='label'>Demandante</span><%= text_field_tag :demandante %>	</p>
+		<p><span  class='label'>Status</span><%= select_tag :status,options_for_select([[],[]]+Demanda::STATUS.collect{|s| [s[0], s[1]]}), :include_blank => true %>	</p>				
+		<%= submit_tag "Buscar",:id => 'submit_button', :name => "" %>
+  </form>
+</div>
+
+
+<h4>Demandas da última semana</h4>
+<% if @demandas_ultima_semana.empty? %>
+  <i>Nenhuma demanda encontrada.</i>
+<% else %>
+<table id='resultado_busca'>
+	<th>Nº</th>
+	<th>Demandante</th>
+	<th>Demanda</th>
+	<th>Data Registro</th>
+<% for demanda in @demandas_ultima_semana %>
+	<tr class="<%= demanda.status %>">
+  <td><%= demanda.id %></td>
+  <td><%= demanda.demandante %></td>
+  <td><%= demanda.descricao[0..30] %></td>
+  <td><%= demanda.created_at.strftime('%d/%m/%Y %H:%M:%S') %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+
+<h4>Filtros</h4>
+
+<ul>
+	<li><%= link_to "Visualizar demandas em atendimento", :action => "index", :filtro => 'em_atendimento' %></li>
+	<li><%= link_to "Efetuar busca avançada", :action => "index", :filtro => 'busca_avancada' %></li>
+</ul>
+
+

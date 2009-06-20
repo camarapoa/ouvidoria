@@ -1,0 +1,16 @@
+<p><%= f.label :nome %><br/><%= f.text_field :nome %></p>
+<p><%= f.label :tipo %><br/><%= f.select :tipo, Destino::TIPOS, :include_blank => true %></p>
+<p><%= f.label :emails %><br/><%= f.text_area :emails, :cols => 50, :rows => 3,   :title => "Podem ser digitados vários e-mails. Separe-os por ponto-e-vírgula. Todos recebem notificação do sistema." %></p>  
+<p><%= f.label :status %><br/><%= f.radio_button :status, :ativo%>Ativo<%= f.radio_button :status , :inativo %>Inativo</p>
+
+<script language='javascript'>
+$(document).ready(function(){	
+	jQuery('#destino_emails').tooltip({ 
+    track: true, 
+    delay: 0, 
+    showURL: false, 
+    showBody: " - ", 
+    fade: 250 
+});
+})
+</script>

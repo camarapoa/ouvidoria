@@ -1,0 +1,12 @@
+<%= link_to "Adicionar novo usuario", new_user_path %>
+
+<h4>Usuários Cadastrados</h4>
+
+<%= flash[:message] %>
+
+<% for user in @users %>
+  <%= link_to user.name, edit_user_path(user) %>
+  
+  <span class='link_delete'><%= link_to "excluir usuário", {:action => :destroy, :id => user.id}, :confirm => 'Tem certeza de que deseja excluir o usuário?', :method => :delete %>
+  <br/>
+<% end %>

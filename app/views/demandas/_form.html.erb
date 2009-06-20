@@ -1,0 +1,26 @@
+<fieldset id='demanda'>
+	<legend>Demanda</legend>
+	<p><%= f.label :demandante %><br/><%= f.text_field :demandante, :title => 'Digite nome do demandante', :size => 100 %></p>
+	<p><%= f.label :demanda %><br/><%= f.text_area :descricao, :cols => 50, :rows => 4 %></p>
+	<p><%= f.label :destino %><br/><%= f.collection_select :destino_id, @destinos, :id , :nome %></p>
+</fieldset>
+
+<fieldset id='contato'>
+	<legend>Contato</legend>
+	<p><%= f.label :telefone %><br/><%= f.text_field :telefone %></p>
+	<p><%= f.label :celular %><br/><%= f.text_field :celular %></p>
+	<p><%= f.label :email %><br/><%= f.text_field :email %></p>
+	<p><%= f.label :endereco %><br/><%= f.text_area :endereco, :cols => 50, :rows => 4 %></p>
+</fieldset>
+
+
+<script language='javascript'>
+$(document).ready(function() {
+jQuery('#demanda_demandante').tooltip({ 
+    track: true, 
+    delay: 0, 
+    showURL: false, 
+    showBody: " - ", 
+    fade: 250 
+});})
+</script>

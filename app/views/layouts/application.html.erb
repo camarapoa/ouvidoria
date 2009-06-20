@@ -1,0 +1,33 @@
+<html>
+  <head>  	
+  	<title>Ouvidoria</title>
+    <%= stylesheet_link_tag "ouvidoria" %>
+    <%= javascript_include_tag 'excanvas','jquery','jquery.bgiframe','jquery.tooltip','jquery.maskedinput','application' %>
+  </head>
+  <body>
+    <div id='banner'>
+      <div class="account">
+        <%= image_tag "no_photo.jpeg" %>
+        <div class="name">
+          Fulano de Tal
+          <%= link_to "[Logout]" %>
+        </div>
+      </div>
+      <br/>
+      <h1>Ouvidoria</h1>
+      <div id='menu'>  
+        <%= link_to "Demandas", demandas_path, @menu == "demandas" ? {:class => "selected"} : nil %>
+        <%= link_to "Destinos", destinos_path, @menu == "destinos" ? {:class => "selected"} : nil %>
+        <%= link_to "Usuários", users_path, @menu == "usuarios" ? {:class => "selected"} : nil %>
+      </div>    
+    </div>        
+    
+    <div id='content'>
+      <%= @content_for_layout %>
+    </div>  
+    
+    <div id='rodape'>
+    
+    </div>
+  </body>
+</html>

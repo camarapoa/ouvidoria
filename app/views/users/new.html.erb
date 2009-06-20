@@ -1,0 +1,8 @@
+<h4>Novo Usuário</h4>
+
+<% form_for @user do |f| %>  
+  <%= error_messages_for :user %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <%= submit_tag  'Adicionar', :disable_with => 'Aguarde'%>  
+  <%= link_to "Cancelar", :action => "index" %>
+<% end %>

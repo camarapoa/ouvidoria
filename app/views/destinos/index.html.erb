@@ -1,0 +1,46 @@
+<%= flash[:message] %>
+
+<%= link_to "Novo Destino", new_destino_path, :class => :new %>
+
+<div id='box_search'>
+	<h4>Procurar Destinos</h4>
+	<%= form_tag "/destinos/#{@filter}", :method => :get %>
+		<%= text_field_tag :busca, @busca, :title => 'Digite qualquer parte do nome do destino' %><br/>
+		<%= submit_tag "Buscar",:id => 'submit_button', :name => "" , :title => 'Para buscar todos os registros, deixe a caixa de busca em branco'%>
+  </form>
+</div>
+
+<% if @destinos.empty? %>
+  <i>Nenhum destino encontrado.</i>
+<% else %>
+<h4>Resultado da Busca</h4>
+	<table id='resultado_busca'>
+	<% for destino in @destinos %>
+		<tr class="<%= cycle('line_even','line_odd')%>">
+	  <td><%= destino.nome %></td>
+	  <td><span class='link_edit'><%= link_to "editar", edit_destino_path(destino), :class => :edit %></td>
+	  <td><span class='link_delete'><%= link_to "excluir", {:action => :destroy, :id => destino.id}, :confirm => 'Tem certeza de que deseja excluir o destino?', :method => :delete , :class => :destroy%></td>
+	  </tr>
+	<% end %>
+	</table>
+<% end %>
+
+<script language='javascript'>
+$(document).ready(function() {
+jQuery('#busca').tooltip({ 
+    track: true, 
+    delay: 0, 
+    showURL: false, 
+    showBody: " - ", 
+    fade: 250 
+});
+
+jQuery('#submit_button').tooltip({ 
+    track: true, 
+    delay: 0, 
+    showURL: false, 
+    showBody: " - ", 
+    fade: 250 
+});
+})
+</script>

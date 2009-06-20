@@ -1,0 +1,8 @@
+<h4>Nova Demanda</h4>
+
+<% form_for @demanda do |f| %>  
+  <%= error_messages_for :demanda %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <%= submit_tag  'Adicionar', :disable_with => 'Aguarde'%>  
+  <%= link_to "Cancelar", :action => "index" %>
+<% end %>
