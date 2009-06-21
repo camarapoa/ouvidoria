@@ -5,20 +5,18 @@ class DemandasController < ApplicationController
   def index
     @menu = "demandas"        
     @demandas_ultima_semana = @demandas = Demanda.last_week
-    if !params[:filtro]
+    if params[:status]    
+    	@busca = 'busca'
+    	@demandas = Demanda.search(params)
+    elsif !params[:filtro]
     	@demandas = []
   	elsif params[:filtro] == 'novas'
   		@demandas = Demanda.novas 
+  		@filtro = 'Demandas Novas'
   	elsif params[:filtro] == 'em_atendimento'
-  		@demandas = Demanda.em_atendimento 
+  		@demandas = Demanda.em_atendimento   	
+  		@filtro = 'Demandas em Atendimento'
   	end     
-    
-=begin    
-    @demandas = []
-    if params[:status]    
-    	@demandas = Demanda.search(params)
-    end    
-=end    
   end
   
   def new
@@ -44,6 +42,10 @@ class DemandasController < ApplicationController
   
   def update
   end
+  
+  def show
+  	@demanda = Demanda.find(params[:id])
+	end
   
   def destroy
   end  

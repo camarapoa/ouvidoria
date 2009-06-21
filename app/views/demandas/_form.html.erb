@@ -2,7 +2,7 @@
 	<legend>Demanda</legend>
 	<p><%= f.label :demandante %><br/><%= f.text_field :demandante, :title => 'Digite nome do demandante', :size => 100 %></p>
 	<p><%= f.label :demanda %><br/><%= f.text_area :descricao, :cols => 50, :rows => 4 %></p>
-	<p><%= f.label :destino %><br/><%= f.collection_select :destino_id, @destinos, :id , :nome %></p>
+	<p><%= f.label :destino %><br/><%= f.collection_select :destino_id, @destinos, :id , :nome, :include_blank => true %></p>
 </fieldset>
 
 <fieldset id='contato'>

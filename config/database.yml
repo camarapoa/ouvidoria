@@ -1,0 +1,6 @@
+development:
+   adapter: mysql
+   database: ouvidoria
+   username: root
+   password: 
+   host: localhost

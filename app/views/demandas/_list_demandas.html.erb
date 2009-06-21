@@ -1,0 +1,14 @@
+<table id='resultado_busca'>
+	<th>Nº</th>
+	<th>Demandante</th>
+	<th>Demanda</th>
+	<th>Data Registro</th>
+<% for demanda in demandas %>
+	<tr class="<%= demanda.status %>">
+  <td><%= link_to demanda.id, demanda_path(demanda.id) %></td>
+  <td><%= demanda.demandante %></td>
+  <td><%= demanda.descricao[0..30] %></td>
+  <td><%= demanda.created_at.strftime('%d/%m/%Y %H:%M:%S') %></td>
+  </tr>
+<% end %>
+</table>

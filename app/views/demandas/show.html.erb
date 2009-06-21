@@ -1,0 +1,49 @@
+<%= flash[:notice] %>
+
+<div class="box_header" style="width:650px">
+  <div style="float:right">
+    Demanda #<big><b><%= @demanda.id %></b></big>
+  </div>
+  <span class="smooth">Criada em</span><big class="medium"> <%= I18n.l @demanda.created_at, :format => :complete %></big>
+  <br/>
+  <br/>
+  <div style="float:right">    
+    <%= link_to "Imprimir", demanda_path(@demanda) + "?print=true" %>
+  </div>
+  <% form_for @demanda do |a| %>
+    <%= submit_tag "Em atendimento", :class => "button_rounded #{@demanda.status == 'em_atendimento' ? 'selected' : ''}" %>
+  <% end %>
+  
+</div>
+
+<div class="box" style="width:650px">
+  <div style="float:right"></div>
+  <%= render "demanda" %>
+</div>
+<br/>
+
+<h3>Histórico</h3>
+<% if @demanda.eventos.empty? %>
+  <%= "<p class='medium'><i>Nenhum evento registrado para esta demanda</i></p>" if @demanda.eventos.empty? %>
+<% else %>
+  <table>
+    <%= render @demanda.eventos %>
+  </table>
+<% end %>
+
+<% if @demanda.aberto? %>
+  <% form_for [@demanda, @evento] do |a| %>
+    <%= flash[:notice_historico] %>
+    <table id="novo_evento">
+      <tr>
+        <td class="data_evento"><%= I18n.l Time.now, :format => 'complete' %></td>
+        <td><%= a.text_area :descricao, :rows => 5, :style => "font-size:12px" %></td>
+      </tr>
+      <tr>
+        <td><!-- --></td>
+        <td><%= submit_tag "Registrar Evento", :style => "width:120" %></td>
+      </tr>
+    </table>
+  <% end %>
+<% end %>
+

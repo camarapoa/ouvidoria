@@ -8,15 +8,16 @@ h1{color:white}
 a, a:visited { color: #3333bb; }
 input[type=text] { font-size:14px; }
 textarea { font-size:14px; }
-.pendente{background-color:#F7D088;}
-
-
-
+.nova{background-color:#F7D088;}
 #rodape{height:50px;margin-top:100px}
 
 .new{background: url(/images/add.png);background-repeat:no-repeat;padding-left:20px}
 .edit{background: url(/images/edit.png);background-repeat:no-repeat;padding-left:20px}
 .destroy{background: url(/images/destroy.png);background-repeat:no-repeat;padding-left:20px}
+.box{background-color:#F3F3F3;padding:10px;margin-bottom:10px}
+
+#demanda { padding:10px}
+
 
 /* ================================== */
 /* =            Banner              = */
@@ -38,17 +39,15 @@ textarea { font-size:14px; }
 /* =================================== */
 /*          Messages & Errors        = */
 /* =================================== */
+/*.success, .error, .warning, .info { font-size:13px; text-align:center; margin: 10px 0 15px 0; padding: 8px 5px 8px 27px; background-position: 25px 9px }*/
 
 .success {	border: 1px solid #9c9; background: #e2f9e3 url(/images/tick_solid.png) no-repeat top; color: #060 }
 .error { border: 1px solid #c68484; background: #fcc url(/images/cross_solid.png) no-repeat top; color: #c00; }
 .warning { border: 1px solid #efefaf; background: #ffffcf url(/images/error_solid.png) no-repeat top;	color: #8a8a30; }
 .info {	border: 1px solid #82c2d4; background: #ebf5f8 url(/images/information_solid.png) no-repeat top; color: #229 }
-/* .notice, .error, .warning, .info { font-weight: bold;	margin: -10px 0 15px 0;	padding: 5px 5px 5px 27px; background-position: 5px 5px } */
-.success, .error, .warning, .info { font-size:13px; text-align:center; margin: -10px 0 15px 0; padding: 8px 5px 8px 27px; background-position: 25px 9px }
-.warning, .notice, .error{padding:5px;border: 1px solid #CCC}
-.warning{}
-.notice{}
-.error{}
+.notice, .error, .warning, .info { font-weight: bold;	margin: -10px 0 15px 0;	padding: 5px 5px 5px 27px; background-position: 5px 5px } 
+
+
 .selected{background-color:blue;}
 
 #tooltip{position:absolute;border:1px solid #333;background-color: #5379B8;padding:2px 2px;color: #FFF;display:none;} 
@@ -57,11 +56,11 @@ textarea { font-size:14px; }
 /* =================================== */
 /*			          Busca			         = */
 /* =================================== */
-#box_search{padding:10px;background-color:#DDF;width:30%;margin-top:20px}
-#busca{padding:10px;font: 16px Arial;font-weight:bold}
+#box_search{padding:5px;background-color:#DDF;width:80%;margin-top:10px}
+#busca{padding:5x;font: 16px Arial;font-weight:bold}
 #resultado_busca{font-size:12px;border-collapse: collapse;padding: 10px;}
 	#resultado_busca td{padding:8px}
 .line_even{background-color:#DDF;}
 .line_odd{background-color:white;}
-.label{width:80px;float:left; }
+.label{width:80px}
 
